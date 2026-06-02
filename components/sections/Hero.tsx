@@ -1,6 +1,15 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 export default function Hero() {
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), 100)
+    return () => clearTimeout(t)
+  }, [])
+
   const scrollToForm = () => {
     document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -15,53 +24,92 @@ export default function Hero() {
         }}
       />
 
-      {/* Gold accent line top */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-sand to-transparent" />
+      {/* Gold accent line top — grows on load */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] overflow-hidden">
+        <div
+          style={{
+            height: '100%',
+            background: 'linear-gradient(to right, transparent, #D4A820, transparent)',
+            transform: loaded ? 'scaleX(1)' : 'scaleX(0)',
+            transformOrigin: 'left center',
+            transition: 'transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)',
+          }}
+        />
+      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
         {/* Eyebrow */}
-        <p className="text-sand text-sm font-medium tracking-[0.2em] uppercase mb-8">
+        <p
+          className="text-sand text-sm font-medium tracking-[0.2em] uppercase mb-8"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? 'none' : 'translateY(16px)',
+            transition: 'opacity 0.7s ease 200ms, transform 0.7s ease 200ms',
+          }}
+        >
           Private Grappling Coaching · Boca Raton, FL
         </p>
 
         {/* Headline */}
-        <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+        <h1
+          className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? 'none' : 'translateY(20px)',
+            transition: 'opacity 0.8s ease 400ms, transform 0.8s ease 400ms',
+          }}
+        >
           Train at your own pace.{' '}
           <span className="text-sand">No class, no judgment,</span> no rush.
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg md:text-xl text-[#9BA8C8] max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p
+          className="text-lg md:text-xl text-[#9BA8C8] max-w-2xl mx-auto mb-12 leading-relaxed"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? 'none' : 'translateY(16px)',
+            transition: 'opacity 0.8s ease 600ms, transform 0.8s ease 600ms',
+          }}
+        >
           One-on-one grappling lessons for adults who want to start — or
           restart — without the pressure of a group class. You set the pace.
           The mat is yours.
         </p>
 
         {/* CTA */}
-        <button
-          onClick={scrollToForm}
-          className="inline-flex items-center gap-3 bg-sand text-dark font-semibold text-base px-8 py-4 rounded-none hover:bg-sand-light transition-colors duration-200 tracking-wide"
+        <div
+          style={{
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? 'none' : 'translateY(12px)',
+            transition: 'opacity 0.8s ease 800ms, transform 0.8s ease 800ms',
+          }}
         >
-          I want to know more
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            onClick={scrollToForm}
+            className="inline-flex items-center gap-3 bg-sand text-dark font-semibold text-base px-8 py-4 rounded-none hover:bg-sand-light transition-colors duration-200 tracking-wide"
           >
-            <path
-              d="M3 8H13M13 8L9 4M13 8L9 12"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
+            I want to know more
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M3 8H13M13 8L9 4M13 8L9 12"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
 
         {/* Social proof hint */}
-        <p className="mt-8 text-[#3D4F7A] text-sm">
+        <p
+          className="mt-8 text-[#3D4F7A] text-sm"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transition: 'opacity 0.8s ease 1000ms',
+          }}
+        >
           Coaching athletes who compete at the highest levels — and adults who
           are just getting started.
         </p>

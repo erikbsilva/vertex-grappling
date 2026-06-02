@@ -1,3 +1,5 @@
+import Reveal from '@/components/ui/Reveal'
+
 const benefits = [
   {
     icon: '◈',
@@ -9,7 +11,7 @@ const benefits = [
     icon: '◈',
     title: 'Real self-confidence',
     description:
-      'Not the kind you read about — the kind that comes from knowing you can handle difficult situations with your body and your mind.',
+      "Not the kind you read about — the kind that comes from knowing you can handle difficult situations with your body and your mind.",
   },
   {
     icon: '◈',
@@ -31,38 +33,43 @@ export default function Solution() {
       <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
         <div className="max-w-2xl mb-16">
-          <p className="text-sand text-sm font-medium tracking-[0.2em] uppercase mb-5">
-            The method
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-snug">
-            Private lessons built around{' '}
-            <span className="text-sand">principles</span>, not just moves.
-          </h2>
-          <p className="text-[#9BA8C8] text-lg leading-relaxed">
-            Most martial arts instruction is about memorizing techniques. This
-            is different. Every session is designed to help you understand{' '}
-            <em>why</em> something works — so you can adapt, problem-solve, and
-            actually retain what you learn.
-          </p>
-          <p className="text-[#9BA8C8] text-lg leading-relaxed mt-4">
-            No curriculum to keep up with. No belt to chase. Just you, the
-            coach, and a clear purpose for every session.
-          </p>
+          <Reveal>
+            <p className="text-sand text-sm font-medium tracking-[0.2em] uppercase mb-5">
+              The method
+            </p>
+          </Reveal>
+          <Reveal delay={100}>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-snug">
+              Private lessons built around{' '}
+              <span className="text-sand">principles</span>, not just moves.
+            </h2>
+          </Reveal>
+          <Reveal delay={150}>
+            <p className="text-[#9BA8C8] text-lg leading-relaxed">
+              Most martial arts instruction is about memorizing techniques. This
+              is different. Every session is designed to help you understand{' '}
+              <em>why</em> something works — so you can adapt, problem-solve, and
+              actually retain what you learn.
+            </p>
+            <p className="text-[#9BA8C8] text-lg leading-relaxed mt-4">
+              No curriculum to keep up with. No belt to chase. Just you, the
+              coach, and a clear purpose for every session.
+            </p>
+          </Reveal>
         </div>
 
         {/* Benefits grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {benefits.map((b) => (
-            <div
-              key={b.title}
-              className="border border-dark-400 bg-dark-100 p-7 hover:border-sand/30 transition-colors duration-300"
-            >
-              <span className="text-sand text-xl mb-4 block">{b.icon}</span>
-              <h3 className="text-white font-semibold text-lg mb-2">
-                {b.title}
-              </h3>
-              <p className="text-[#6B7BA8] leading-relaxed">{b.description}</p>
-            </div>
+          {benefits.map((b, i) => (
+            <Reveal key={b.title} delay={i * 80}>
+              <div className="border border-dark-400 bg-dark-100 p-7 hover:border-sand/40 transition-colors duration-300 h-full">
+                <span className="text-sand text-xl mb-4 block">{b.icon}</span>
+                <h3 className="text-white font-semibold text-lg mb-2">
+                  {b.title}
+                </h3>
+                <p className="text-[#6B7BA8] leading-relaxed">{b.description}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
