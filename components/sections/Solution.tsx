@@ -21,7 +21,7 @@ const benefits = [
     icon: '◈',
     title: 'Functional strength & agility',
     description:
-      'You'll get stronger doing something that actually makes sense — not isolated exercises for the sake of it.',
+      "You'll get stronger doing something that actually makes sense — not isolated exercises for the sake of it.",
   },
 ]
 

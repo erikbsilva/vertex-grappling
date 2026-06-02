@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { getSupabase } from '@/lib/supabase'
 
 const COACH_WHATSAPP = process.env.COACH_WHATSAPP_NUMBER! // e.g. "15615527276"
 const CALLMEBOT_APIKEY = process.env.CALLMEBOT_APIKEY!
@@ -37,7 +37,8 @@ export async function POST(req: NextRequest) {
     const trainedBool = ja_treinou === 'yes'
 
     // Save to Supabase
-    const { error } = await supabase.from('leads').insert([
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { error } = await (getSupabase() as any).from('leads').insert([
       {
         nome: nome.trim(),
         whatsapp: whatsapp.trim(),

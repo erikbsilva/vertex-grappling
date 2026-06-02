@@ -1,7 +1,14 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.SUPABASE_URL!
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
+// Lazy singleton — only instantiated at request time, not at build time
+let _client: ReturnType<typeof createClient> | null = null
 
-// Server-side only client (service role — never expose to browser)
-export const supabase = createClient(supabaseUrl, supabaseKey)
+export function getSupabase() {
+  if (!_client) {
+    const url = process.env.SUPABASE_URL
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY
+    if (!url || !key) throw new Error('Supabase env vars not set')
+    _client = createClient(url, key)
+  }
+  return _client
+}
