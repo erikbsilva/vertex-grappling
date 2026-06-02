@@ -55,7 +55,7 @@ export default function LeadForm() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-snug">
             Book your private lesson.
           </h2>
-          <p className="text-[#707070] leading-relaxed">
+          <p className="text-[#6B7BA8] leading-relaxed">
             Fill out the form below. I'll reach out on WhatsApp within 24 hours
             to talk through your goals and schedule your first session.
           </p>
@@ -77,7 +77,7 @@ export default function LeadForm() {
             <h3 className="text-white font-semibold text-xl mb-3">
               Got it. I'll be in touch soon.
             </h3>
-            <p className="text-[#707070] text-sm leading-relaxed">
+            <p className="text-[#6B7BA8] text-sm leading-relaxed">
               You'll receive a WhatsApp message within 24 hours. If you have
               any questions in the meantime, reach me at{' '}
               <a
@@ -98,7 +98,7 @@ export default function LeadForm() {
           >
             {/* Full name */}
             <div>
-              <label className="block text-[#A0A0A0] text-sm mb-2" htmlFor="nome">
+              <label className="block text-[#9BA8C8] text-sm mb-2" htmlFor="nome">
                 Full name <span className="text-sand">*</span>
               </label>
               <input
@@ -109,13 +109,13 @@ export default function LeadForm() {
                 value={form.nome}
                 onChange={handleChange}
                 placeholder="John Smith"
-                className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#404040] px-4 py-3 text-sm focus:outline-none focus:border-sand/60 transition-colors"
+                className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#2D3A5C] px-4 py-3 text-sm focus:outline-none focus:border-sand/60 transition-colors"
               />
             </div>
 
             {/* WhatsApp */}
             <div>
-              <label className="block text-[#A0A0A0] text-sm mb-2" htmlFor="whatsapp">
+              <label className="block text-[#9BA8C8] text-sm mb-2" htmlFor="whatsapp">
                 WhatsApp <span className="text-sand">*</span>
               </label>
               <input
@@ -126,13 +126,13 @@ export default function LeadForm() {
                 value={form.whatsapp}
                 onChange={handleChange}
                 placeholder="+1 (561) 000-0000"
-                className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#404040] px-4 py-3 text-sm focus:outline-none focus:border-sand/60 transition-colors"
+                className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#2D3A5C] px-4 py-3 text-sm focus:outline-none focus:border-sand/60 transition-colors"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-[#A0A0A0] text-sm mb-2" htmlFor="email">
+              <label className="block text-[#9BA8C8] text-sm mb-2" htmlFor="email">
                 Email <span className="text-sand">*</span>
               </label>
               <input
@@ -143,13 +143,13 @@ export default function LeadForm() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="john@example.com"
-                className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#404040] px-4 py-3 text-sm focus:outline-none focus:border-sand/60 transition-colors"
+                className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#2D3A5C] px-4 py-3 text-sm focus:outline-none focus:border-sand/60 transition-colors"
               />
             </div>
 
             {/* Training background */}
             <div>
-              <p className="text-[#A0A0A0] text-sm mb-3">
+              <p className="text-[#9BA8C8] text-sm mb-3">
                 Have you trained any martial art before?{' '}
                 <span className="text-sand">*</span>
               </p>
@@ -160,7 +160,7 @@ export default function LeadForm() {
                     className={`flex items-center justify-center gap-2 border py-3 cursor-pointer text-sm font-medium transition-colors ${
                       form.ja_treinou === val
                         ? 'border-sand bg-sand/10 text-sand'
-                        : 'border-dark-400 text-[#707070] hover:border-dark-300'
+                        : 'border-dark-400 text-[#6B7BA8] hover:border-dark-300'
                     }`}
                   >
                     <input
@@ -191,7 +191,7 @@ export default function LeadForm() {
               {state === 'loading' ? 'Sending...' : 'Book my private lesson →'}
             </button>
 
-            <p className="text-[#505050] text-xs text-center">
+            <p className="text-[#3D4F7A] text-xs text-center">
               No spam. No hard sell. Just a conversation about whether this is
               right for you.
             </p>

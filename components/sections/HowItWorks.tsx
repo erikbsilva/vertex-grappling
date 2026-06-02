@@ -42,7 +42,7 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <div key={step.number} className="bg-dark p-8 md:p-10 relative">
               {/* Step number */}
-              <span className="text-5xl font-bold text-dark-400 select-none block mb-6">
+              <span className="text-5xl font-bold text-[#1A2040] select-none block mb-6">
                 {step.number}
               </span>
 
@@ -54,7 +54,7 @@ export default function HowItWorks() {
               <h3 className="text-white font-semibold text-lg mb-3">
                 {step.title}
               </h3>
-              <p className="text-[#707070] leading-relaxed text-sm">
+              <p className="text-[#6B7BA8] leading-relaxed text-sm">
                 {step.description}
               </p>
             </div>

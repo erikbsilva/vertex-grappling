@@ -10,16 +10,16 @@ const config: Config = {
     extend: {
       colors: {
         sand: {
-          DEFAULT: '#C4A46B',
-          light: '#D4B87E',
-          dark: '#A88A52',
+          DEFAULT: '#D4A820',
+          light: '#E2BA35',
+          dark: '#B8901A',
         },
         dark: {
-          DEFAULT: '#0C0C0C',
-          100: '#141414',
-          200: '#1A1A1A',
-          300: '#222222',
-          400: '#2A2A2A',
+          DEFAULT: '#07091A',
+          100: '#0D1028',
+          200: '#111535',
+          300: '#151A3F',
+          400: '#1A2040',
         },
       },
       fontFamily: {

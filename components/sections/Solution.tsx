@@ -38,13 +38,13 @@ export default function Solution() {
             Private lessons built around{' '}
             <span className="text-sand">principles</span>, not just moves.
           </h2>
-          <p className="text-[#A0A0A0] text-lg leading-relaxed">
+          <p className="text-[#9BA8C8] text-lg leading-relaxed">
             Most martial arts instruction is about memorizing techniques. This
             is different. Every session is designed to help you understand{' '}
             <em>why</em> something works — so you can adapt, problem-solve, and
             actually retain what you learn.
           </p>
-          <p className="text-[#A0A0A0] text-lg leading-relaxed mt-4">
+          <p className="text-[#9BA8C8] text-lg leading-relaxed mt-4">
             No curriculum to keep up with. No belt to chase. Just you, the
             coach, and a clear purpose for every session.
           </p>
@@ -61,7 +61,7 @@ export default function Solution() {
               <h3 className="text-white font-semibold text-lg mb-2">
                 {b.title}
               </h3>
-              <p className="text-[#707070] leading-relaxed">{b.description}</p>
+              <p className="text-[#6B7BA8] leading-relaxed">{b.description}</p>
             </div>
           ))}
         </div>

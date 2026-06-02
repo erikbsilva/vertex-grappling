@@ -10,7 +10,7 @@ export default function Agitation() {
           The perfect moment never comes.
         </h2>
 
-        <div className="space-y-5 text-[#A0A0A0] text-lg leading-relaxed">
+        <div className="space-y-5 text-[#9BA8C8] text-lg leading-relaxed">
           <p>
             You've been thinking about it for months — maybe years. You'll
             start when you're in better shape. When work slows down. When

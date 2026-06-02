@@ -57,7 +57,7 @@ export default function ForWhom() {
               {/* Pain points */}
               <ul className="space-y-2">
                 {card.pains.map((pain) => (
-                  <li key={pain} className="flex items-start gap-3 text-[#707070] text-sm">
+                  <li key={pain} className="flex items-start gap-3 text-[#6B7BA8] text-sm">
                     <span className="text-sand mt-0.5 flex-shrink-0">—</span>
                     {pain}
                   </li>
@@ -68,7 +68,7 @@ export default function ForWhom() {
               <div className="border-t border-dark-400" />
 
               {/* Result */}
-              <p className="text-[#C0BDB8] text-sm leading-relaxed">
+              <p className="text-[#9BA8C8] text-sm leading-relaxed">
                 {card.result}
               </p>
             </div>

@@ -20,12 +20,12 @@ export default function Authority() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-snug">
               Erik Silva
             </h2>
-            <p className="text-[#A0A0A0] leading-relaxed mb-6">
+            <p className="text-[#9BA8C8] leading-relaxed mb-6">
               I've spent years coaching athletes who compete at the highest level
               in the UFC — and that work has made me a better teacher for
               everyone who steps on the mat with me, regardless of experience.
             </p>
-            <p className="text-[#A0A0A0] leading-relaxed mb-10">
+            <p className="text-[#9BA8C8] leading-relaxed mb-10">
               What I've learned is that the gap between a beginner and an
               advanced practitioner isn't talent — it's exposure to the right
               principles at the right time. That's what private coaching gives
@@ -35,7 +35,7 @@ export default function Authority() {
             {/* Credentials */}
             <ul className="space-y-3">
               {credentials.map((c) => (
-                <li key={c} className="flex items-center gap-3 text-[#C0BDB8] text-sm">
+                <li key={c} className="flex items-center gap-3 text-[#9BA8C8] text-sm">
                   <span className="w-1.5 h-1.5 bg-sand rounded-full flex-shrink-0" />
                   {c}
                 </li>
@@ -54,7 +54,7 @@ export default function Authority() {
                 Technique is what you do. Principles are why it works. When you
                 understand the why, you stop memorizing and start thinking.
               </blockquote>
-              <cite className="text-[#707070] text-sm not-italic">
+              <cite className="text-[#6B7BA8] text-sm not-italic">
                 — Erik Silva, author of{' '}
                 <span className="text-sand">Beyond Technique</span>
               </cite>

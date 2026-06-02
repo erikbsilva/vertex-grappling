@@ -31,7 +31,7 @@ export default function Hero() {
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg md:text-xl text-[#A0A0A0] max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-lg md:text-xl text-[#9BA8C8] max-w-2xl mx-auto mb-12 leading-relaxed">
           One-on-one grappling lessons for adults who want to start — or
           restart — without the pressure of a group class. You set the pace.
           The mat is yours.
@@ -61,7 +61,7 @@ export default function Hero() {
         </button>
 
         {/* Social proof hint */}
-        <p className="mt-8 text-[#505050] text-sm">
+        <p className="mt-8 text-[#3D4F7A] text-sm">
           Coaching athletes who compete at the highest levels — and adults who
           are just getting started.
         </p>
