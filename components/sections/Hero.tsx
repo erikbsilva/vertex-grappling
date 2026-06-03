@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false)
@@ -16,13 +17,20 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark">
-      {/* Background texture */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
+      {/* Hero background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/img/eriksilvagrapplingcoachhero.webp"
+          alt="Erik Silva grappling coach"
+          fill
+          priority
+          className="object-cover object-center"
+          style={{ opacity: 0.35 }}
+        />
+        {/* Dark overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/60 via-dark/40 to-dark" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark/70 via-transparent to-dark/70" />
+      </div>
 
       {/* Gold accent line top — grows on load */}
       <div className="absolute top-0 left-0 right-0 h-[2px] overflow-hidden">
@@ -104,7 +112,7 @@ export default function Hero() {
 
         {/* Social proof hint */}
         <p
-          className="mt-8 text-[#3D4F7A] text-sm"
+          className="mt-8 text-[#9BA8C8] text-sm"
           style={{
             opacity: loaded ? 1 : 0,
             transition: 'opacity 0.8s ease 1000ms',
