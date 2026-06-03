@@ -47,7 +47,7 @@ export default function ForWhom() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {cards.map((card, i) => (
             <Reveal key={card.tag} delay={i * 120} direction={i === 0 ? 'left' : 'right'}>
-              <div className="border border-dark-400 bg-dark-200 p-8 flex flex-col gap-6 h-full">
+              <div className="border border-dark-400 bg-dark-200 p-8 flex flex-col gap-6 h-full backdrop-blur-sm hover:border-sand/30 transition-colors duration-200">
                 <span className="inline-block border border-sand/40 text-sand text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1 self-start">
                   {card.tag}
                 </span>

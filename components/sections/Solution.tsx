@@ -61,7 +61,7 @@ export default function Solution() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {benefits.map((b, i) => (
             <Reveal key={b.title} delay={i * 80}>
-              <div className="border border-dark-400 bg-dark-100 p-7 hover:border-sand/40 transition-colors duration-300 h-full">
+              <div className="border border-dark-400 bg-dark-100 p-7 hover:border-sand/40 transition-colors duration-200 h-full cursor-default">
                 <span className="text-sand text-xl mb-4 block">{b.icon}</span>
                 <h3 className="text-white font-semibold text-lg mb-2">
                   {b.title}
