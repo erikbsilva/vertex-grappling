@@ -54,11 +54,11 @@ export default function LeadForm() {
               Take the first step
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-snug">
-              Book your private lesson.
+              Interested? Let's talk.
             </h2>
             <p className="text-[#6B7BA8] leading-relaxed">
-              Fill out the form below. I'll reach out on WhatsApp within 24 hours
-              to talk through your goals and schedule your first session.
+              Fill out the form and I will get back to you on WhatsApp within 24 hours.
+              No commitment on your end yet.
             </p>
           </div>
         </Reveal>
@@ -78,11 +78,11 @@ export default function LeadForm() {
                 </svg>
               </div>
               <h3 className="text-white font-semibold text-xl mb-3">
-                Got it. I'll be in touch soon.
+                Got it. Talk soon.
               </h3>
               <p className="text-[#6B7BA8] text-sm leading-relaxed">
-                You'll receive a WhatsApp message within 24 hours. If you have
-                any questions in the meantime, reach me at{' '}
+                Expect a WhatsApp message within 24 hours. Questions before then?
+                Find me at{' '}
                 <a
                   href="https://instagram.com/erikgrapplingcoach"
                   target="_blank"
@@ -191,8 +191,7 @@ export default function LeadForm() {
               </button>
 
               <p className="text-[#3D4F7A] text-xs text-center">
-                No spam. No hard sell. Just a conversation about whether this is
-                right for you.
+                No sales pitch. Just a conversation to see if this is a good fit.
               </p>
             </form>
           </Reveal>

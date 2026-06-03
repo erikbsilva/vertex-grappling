@@ -5,21 +5,21 @@ import Reveal from '@/components/ui/Reveal'
 const steps = [
   {
     number: '01',
-    title: 'Fill out the form',
+    title: 'Fill out the form below',
     description:
-      "Tell me a bit about yourself and what you're looking for. Takes less than a minute.",
+      "A few basic questions about your background and what you are looking for. Takes about a minute.",
   },
   {
     number: '02',
-    title: 'I reach out directly',
+    title: 'I message you on WhatsApp',
     description:
-      "You'll get a message on WhatsApp within 24 hours. We'll talk briefly to understand your goals and answer any questions.",
+      "Usually within 24 hours. We have a short conversation to figure out what makes sense for you.",
   },
   {
     number: '03',
-    title: 'First session on your terms',
+    title: 'We schedule your first session',
     description:
-      "We schedule your first lesson at a time that works for you. No commitment beyond that first session.",
+      "Pick a time that works. Show up. See how it feels. No long-term commitment required.",
   },
 ]
 

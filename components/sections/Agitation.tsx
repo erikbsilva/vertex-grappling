@@ -12,29 +12,28 @@ export default function Agitation() {
 
         <Reveal delay={100}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-snug">
-            The perfect moment never comes.
+            You keep waiting for the right time.
           </h2>
         </Reveal>
 
         <div className="space-y-5 text-[#9BA8C8] text-lg leading-relaxed">
           <Reveal delay={150}>
             <p>
-              You've been thinking about it for months — maybe years. You'll
-              start when you're in better shape. When work slows down. When
-              you find the right gym. When you feel ready.
+              When you get in better shape. When work settles down.
+              When you find a gym that feels right.
             </p>
           </Reveal>
           <Reveal delay={200}>
             <p>
-              But none of those conditions ever fully arrive. And every week you
-              wait, the idea of walking into a room full of strangers and looking
-              like a beginner feels heavier.
+              That moment rarely shows up. And the longer you wait, the
+              more uncomfortable the idea of walking into a room full of
+              strangers becomes.
             </p>
           </Reveal>
           <Reveal delay={250}>
             <p className="text-white font-medium">
-              The problem isn't your schedule or your fitness level. It's the
-              environment — and that's exactly what private coaching solves.
+              The issue is not your fitness level or your schedule.
+              It is the group class format. Private coaching removes that entirely.
             </p>
           </Reveal>
         </div>

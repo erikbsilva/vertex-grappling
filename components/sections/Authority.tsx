@@ -28,15 +28,14 @@ export default function Authority() {
             </Reveal>
             <Reveal delay={150}>
               <p className="text-[#9BA8C8] leading-relaxed mb-6">
-                I've spent years coaching athletes who compete at the highest level
-                in the UFC — and that work has made me a better teacher for
-                everyone who steps on the mat with me, regardless of experience.
+                I coach UFC fighters for a living. Vicente Luque, Viviane Araujo.
+                That work is demanding and I take it seriously.
               </p>
               <p className="text-[#9BA8C8] leading-relaxed mb-10">
-                What I've learned is that the gap between a beginner and an
-                advanced practitioner isn't talent — it's exposure to the right
-                principles at the right time. That's what private coaching gives
-                you.
+                I also train regular adults who have never competed and never will.
+                The principles I use are the same. The pace is different.
+                Beginners are not a side project for me. They are part of why
+                I wrote the book.
               </p>
             </Reveal>
 
@@ -60,12 +59,11 @@ export default function Authority() {
                   "
                 </span>
                 <blockquote className="text-white text-xl font-medium leading-relaxed mb-6">
-                  Technique is what you do. Principles are why it works. When you
-                  understand the why, you stop memorizing and start thinking.
+                  Technique tells you what to do. Principles tell you why it works.
+                  Once you understand the why, you stop needing to memorize anything.
                 </blockquote>
                 <cite className="text-[#6B7BA8] text-sm not-italic">
-                  — Erik Silva, author of{' '}
-                  <span className="text-sand">Beyond Technique</span>
+                  Erik Silva, <span className="text-sand">Beyond Technique</span>
                 </cite>
               </div>
               <div className="absolute -bottom-3 -right-3 w-full h-full border border-sand/20 -z-10" />

@@ -5,25 +5,25 @@ import Reveal from '@/components/ui/Reveal'
 const cards = [
   {
     tag: 'Never trained',
-    headline: "You want to start. You just don't want to start in a room full of strangers.",
+    headline: "You want to try grappling. You just do not want to do it in front of a class.",
     pains: [
-      "Worried you'll get hurt",
-      "Don't want to look lost in front of a class",
-      "Not sure if you're even physically ready",
+      "Afraid of getting hurt by someone more experienced",
+      "Do not want to be the person who does not know anything",
+      "Not sure if you are in good enough shape to start",
     ],
     result:
-      "You'll learn the foundations with full attention on you — no rushing through material, no one watching you struggle.",
+      "Your first sessions focus entirely on you. No material to keep up with, no one watching you struggle through the basics.",
   },
   {
     tag: 'Coming back',
-    headline: "You trained before. Stopping was hard. Returning feels harder.",
+    headline: "You trained before. Life got in the way. Now returning feels more complicated than starting.",
     pains: [
-      "Skills have faded and that's frustrating",
-      "Don't want to be judged by people who kept training",
-      "Unsure where to pick up without looking like a beginner",
+      "Skills have faded and that is hard to accept",
+      "Do not want to train alongside people who never stopped",
+      "Not sure where to pick back up",
     ],
     result:
-      "Private sessions let you rebuild at your own level — no comparisons, no awkwardness, just focused work on what matters to you now.",
+      "We start from where you actually are, not where you used to be. No comparisons, no pressure to catch up.",
   },
 ]
 

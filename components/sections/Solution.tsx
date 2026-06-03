@@ -3,27 +3,27 @@ import Reveal from '@/components/ui/Reveal'
 const benefits = [
   {
     icon: '◈',
-    title: 'Reasoning under pressure',
+    title: 'Thinking under pressure',
     description:
-      'Grappling trains your brain to stay calm and think clearly when things get uncomfortable — on and off the mat.',
+      'Grappling puts you in uncomfortable situations on purpose. Over time, your brain learns to stay calm and work through them. That carries over.',
   },
   {
     icon: '◈',
-    title: 'Real self-confidence',
+    title: 'Confidence that is earned',
     description:
-      "Not the kind you read about — the kind that comes from knowing you can handle difficult situations with your body and your mind.",
+      'Not a mindset exercise. You build it by doing hard things in a controlled environment until they stop feeling hard.',
   },
   {
     icon: '◈',
-    title: 'Coordination & body awareness',
+    title: 'Coordination and body control',
     description:
-      'Most adults have never been taught how to move efficiently. Private lessons change that, at whatever pace works for you.',
+      'Most adults were never taught how to move well. We fix that. Slowly, deliberately, without making you feel stupid about it.',
   },
   {
     icon: '◈',
-    title: 'Functional strength & agility',
+    title: 'Strength and conditioning',
     description:
-      "You'll get stronger doing something that actually makes sense — not isolated exercises for the sake of it.",
+      'You will get physically stronger. Not because we add workouts, but because grappling demands it and your body adapts.',
   },
 ]
 
@@ -40,20 +40,19 @@ export default function Solution() {
           </Reveal>
           <Reveal delay={100}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-snug">
-              Private lessons built around{' '}
-              <span className="text-sand">principles</span>, not just moves.
+              Coaching built around{' '}
+              <span className="text-sand">principles</span>, not just techniques.
             </h2>
           </Reveal>
           <Reveal delay={150}>
             <p className="text-[#9BA8C8] text-lg leading-relaxed">
-              Most martial arts instruction is about memorizing techniques. This
-              is different. Every session is designed to help you understand{' '}
-              <em>why</em> something works — so you can adapt, problem-solve, and
-              actually retain what you learn.
+              Most instruction is about copying moves. These sessions are
+              about understanding why they work. That changes how fast
+              you learn and how much you actually retain.
             </p>
             <p className="text-[#9BA8C8] text-lg leading-relaxed mt-4">
-              No curriculum to keep up with. No belt to chase. Just you, the
-              coach, and a clear purpose for every session.
+              No syllabus to follow. No belt to earn. Each session has
+              a clear focus and we work at your pace.
             </p>
           </Reveal>
         </div>

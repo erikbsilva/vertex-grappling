@@ -59,8 +59,8 @@ export default function Hero() {
             transition: 'opacity 0.8s ease 400ms, transform 0.8s ease 400ms',
           }}
         >
-          Train at your own pace.{' '}
-          <span className="text-sand">No class, no judgment,</span> no rush.
+          Learn grappling on your own terms.{' '}
+          <span className="text-sand">Private lessons.</span> No group class.
         </h1>
 
         {/* Subheadline */}
@@ -72,9 +72,9 @@ export default function Hero() {
             transition: 'opacity 0.8s ease 600ms, transform 0.8s ease 600ms',
           }}
         >
-          One-on-one grappling lessons for adults who want to start — or
-          restart — without the pressure of a group class. You set the pace.
-          The mat is yours.
+          One-on-one coaching in Boca Raton for adults who want to start
+          or get back into grappling. No class to keep up with. No one
+          watching you figure things out.
         </p>
 
         {/* CTA */}
@@ -110,8 +110,7 @@ export default function Hero() {
             transition: 'opacity 0.8s ease 1000ms',
           }}
         >
-          Coaching athletes who compete at the highest levels — and adults who
-          are just getting started.
+          UFC coaching credits. Now taking private students in Boca Raton.
         </p>
       </div>
 
