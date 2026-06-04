@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Reveal from '@/components/ui/Reveal'
 
 const credentials = [
-  'Black belt in grappling / wrestling',
+  'Black belt in grappling / Brazilian Luta-livre',
   'Grappling coach — Vicente Luque (UFC)',
   'Grappling coach — Viviane Araújo (UFC)',
   'Author — "Beyond Technique"',
@@ -44,7 +44,19 @@ export default function Authority() {
               {credentials.map((c, i) => (
                 <Reveal key={c} as="li" delay={200 + i * 60} className="flex items-center gap-3 text-[#9BA8C8] text-sm">
                   <span className="w-1.5 h-1.5 bg-sand rounded-full flex-shrink-0" />
-                  {c}
+                  {c === 'Black belt in grappling / Brazilian Luta-livre' ? (
+                    <>
+                      Black belt in grappling /{' '}
+                      <a
+                        href="https://en.wikipedia.org/wiki/Luta_Livre"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sand hover:underline underline-offset-2"
+                      >
+                        Brazilian Luta-livre
+                      </a>
+                    </>
+                  ) : c}
                 </Reveal>
               ))}
             </ul>
