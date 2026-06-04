@@ -41,11 +41,9 @@ export default function Authority() {
 
             <ul className="space-y-3">
               {credentials.map((c, i) => (
-                <Reveal key={c} delay={200 + i * 60}>
-                  <li className="flex items-center gap-3 text-[#9BA8C8] text-sm">
-                    <span className="w-1.5 h-1.5 bg-sand rounded-full flex-shrink-0" />
-                    {c}
-                  </li>
+                <Reveal key={c} as="li" delay={200 + i * 60} className="flex items-center gap-3 text-[#9BA8C8] text-sm">
+                  <span className="w-1.5 h-1.5 bg-sand rounded-full flex-shrink-0" />
+                  {c}
                 </Reveal>
               ))}
             </ul>

@@ -7,6 +7,7 @@ type Props = {
   className?: string
   delay?: number
   direction?: 'up' | 'left' | 'right' | 'none'
+  as?: keyof JSX.IntrinsicElements
 }
 
 export default function Reveal({
@@ -14,8 +15,10 @@ export default function Reveal({
   className = '',
   delay = 0,
   direction = 'up',
+  as,
 }: Props) {
   const { ref, inView } = useInView()
+  const Tag = (as ?? 'div') as React.ElementType
 
   const translate = {
     up: 'translateY(28px)',
@@ -25,8 +28,9 @@ export default function Reveal({
   }
 
   return (
-    <div
-      ref={ref as React.RefObject<HTMLDivElement>}
+    <Tag
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ref={ref as any}
       className={className}
       style={{
         opacity: inView ? 1 : 0,
@@ -35,6 +39,6 @@ export default function Reveal({
       }}
     >
       {children}
-    </div>
+    </Tag>
   )
 }

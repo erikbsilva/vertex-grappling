@@ -6,12 +6,12 @@ export default function Footer() {
           <p className="text-white font-semibold tracking-widest text-sm uppercase">
             Vertex Grappling
           </p>
-          <p className="text-[#3D4F7A] text-xs mt-1">
+          <p className="text-[#6B7BA8] text-xs mt-1">
             Private coaching · Boca Raton, FL
           </p>
         </div>
 
-        <div className="flex items-center gap-6 text-[#3D4F7A] text-xs">
+        <div className="flex items-center gap-6 text-[#6B7BA8] text-xs">
           <a
             href="https://instagram.com/erikgrapplingcoach"
             target="_blank"
