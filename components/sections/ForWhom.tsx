@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Reveal from '@/components/ui/Reveal'
 
 const cards = [
@@ -43,6 +44,17 @@ export default function ForWhom() {
             </h2>
           </Reveal>
         </div>
+
+        {/* Context image */}
+        <Reveal className="relative w-full h-56 md:h-72 overflow-hidden mb-8 border border-dark-400">
+          <Image
+            src="/img/for-whom.webp"
+            alt="Private grappling lesson"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-dark-100/80 to-transparent" />
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {cards.map((card, i) => (

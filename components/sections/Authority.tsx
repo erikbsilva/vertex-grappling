@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Reveal from '@/components/ui/Reveal'
 
 const credentials = [
@@ -49,22 +50,35 @@ export default function Authority() {
             </ul>
           </div>
 
-          {/* Right: quote block */}
+          {/* Right: photo + quote */}
           <Reveal direction="right" delay={100}>
-            <div className="relative">
-              <div className="border border-dark-400 bg-dark-200 p-8 md:p-10">
-                <span className="text-sand text-5xl font-bold leading-none select-none block mb-4">
+            <div className="flex flex-col gap-6">
+              {/* Portrait photo */}
+              <div className="relative w-full aspect-[6/7] overflow-hidden border border-dark-400">
+                <Image
+                  src="/img/erik-portrait.webp"
+                  alt="Erik Silva, grappling coach"
+                  fill
+                  className="object-cover object-top"
+                />
+                {/* Subtle bottom fade */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-dark-100 to-transparent" />
+              </div>
+
+              {/* Quote */}
+              <div className="relative border border-dark-400 bg-dark-200 p-7">
+                <span className="text-sand text-4xl font-bold leading-none select-none block mb-3">
                   "
                 </span>
-                <blockquote className="text-white text-xl font-medium leading-relaxed mb-6">
+                <blockquote className="text-white text-lg font-medium leading-relaxed mb-4">
                   Technique tells you what to do. Principles tell you why it works.
                   Once you understand the why, you stop needing to memorize anything.
                 </blockquote>
                 <cite className="text-[#6B7BA8] text-sm not-italic">
                   Erik Silva, <span className="text-sand">Beyond Technique</span>
                 </cite>
+                <div className="absolute -bottom-2 -right-2 w-full h-full border border-sand/20 -z-10" />
               </div>
-              <div className="absolute -bottom-3 -right-3 w-full h-full border border-sand/20 -z-10" />
             </div>
           </Reveal>
         </div>
