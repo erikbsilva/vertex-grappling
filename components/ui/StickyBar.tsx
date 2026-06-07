@@ -6,12 +6,24 @@ export default function StickyBar() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => {
-      // Show after scrolling past ~100vh
-      setVisible(window.scrollY > window.innerHeight * 0.9)
+    // Compute the threshold once on mount (and on resize), so mobile
+    // browsers showing/hiding their address bar don't cause the bar
+    // to flicker in and out as window.innerHeight changes mid-scroll.
+    let threshold = window.innerHeight * 0.9
+
+    const onResize = () => {
+      threshold = window.innerHeight * 0.9
     }
+    const onScroll = () => {
+      setVisible(window.scrollY > threshold)
+    }
+
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    window.addEventListener('resize', onResize)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onResize)
+    }
   }, [])
 
   const scrollToForm = () => {
@@ -34,10 +46,9 @@ export default function StickyBar() {
       </span>
 
       {/* Center: scarcity nudge */}
-      <p className="text-[#6B7BA8] text-xs sm:text-sm">
-        Limited to{' '}
-        <span className="text-sand font-medium">8 students</span>{' '}
-        — currently accepting applications
+      <p className="text-[#6B7BA8] text-xs sm:text-sm text-center truncate">
+        <span className="text-sand font-medium">8 students</span> max
+        <span className="hidden sm:inline">, currently accepting applications</span>
       </p>
 
       {/* Right: CTA */}

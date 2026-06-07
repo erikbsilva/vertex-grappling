@@ -16,7 +16,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark">
+    <section className="relative min-h-dvh flex items-center justify-center overflow-hidden bg-dark">
       {/* Hero background image */}
       <div className="absolute inset-0">
         <Image
@@ -45,7 +45,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 py-16 sm:py-20 md:py-24 text-center">
         {/* Eyebrow */}
         <p
           className="text-sand text-sm font-medium tracking-[0.2em] uppercase mb-8"
@@ -60,7 +60,7 @@ export default function Hero() {
 
         {/* Headline */}
         <h1
-          className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6"
+          className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight mb-6"
           style={{
             opacity: loaded ? 1 : 0,
             transform: loaded ? 'none' : 'translateY(20px)',

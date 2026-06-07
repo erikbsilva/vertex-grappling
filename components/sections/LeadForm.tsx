@@ -116,7 +116,7 @@ export default function LeadForm() {
                   value={form.nome}
                   onChange={handleChange}
                   placeholder="John Smith"
-                  className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#2D3A5C] px-4 py-3 text-sm focus:outline-none focus:border-sand/60 transition-colors"
+                  className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#2D3A5C] px-4 py-3 text-base focus:outline-none focus:border-sand/60 transition-colors"
                 />
               </div>
 
@@ -132,7 +132,7 @@ export default function LeadForm() {
                   value={form.whatsapp}
                   onChange={handleChange}
                   placeholder="+1 (561) 000-0000"
-                  className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#2D3A5C] px-4 py-3 text-sm focus:outline-none focus:border-sand/60 transition-colors"
+                  className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#2D3A5C] px-4 py-3 text-base focus:outline-none focus:border-sand/60 transition-colors"
                 />
               </div>
 
@@ -148,7 +148,7 @@ export default function LeadForm() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="john@example.com"
-                  className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#2D3A5C] px-4 py-3 text-sm focus:outline-none focus:border-sand/60 transition-colors"
+                  className="w-full bg-dark-200 border border-dark-400 text-white placeholder-[#2D3A5C] px-4 py-3 text-base focus:outline-none focus:border-sand/60 transition-colors"
                 />
               </div>
 
