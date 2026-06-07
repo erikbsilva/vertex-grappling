@@ -8,9 +8,9 @@ const cards = [
     tag: 'Never trained',
     headline: "You want to try grappling. You just do not want to do it in front of a class.",
     pains: [
-      "Afraid of getting hurt by someone more experienced",
-      "Do not want to be the person who does not know anything",
-      "Not sure if you are in good enough shape to start",
+      "You worry someone more experienced might hurt you without meaning to",
+      "You do not want to be the one person in the room who has no idea what they are doing",
+      "You are not even sure you are in good enough shape to start",
     ],
     result:
       "Your first sessions focus entirely on you. No material to keep up with, no one watching you struggle through the basics.",
@@ -19,9 +19,9 @@ const cards = [
     tag: 'Coming back',
     headline: "You trained before. Life got in the way. Now returning feels more complicated than starting.",
     pains: [
-      "Skills have faded and that is hard to accept",
-      "Do not want to train alongside people who never stopped",
-      "Not sure where to pick back up",
+      "It is hard to admit how much your skills have faded",
+      "You do not love the idea of training next to people who never stopped",
+      "You honestly do not know where to pick back up",
     ],
     result:
       "We start from where you actually are, not where you used to be. No comparisons, no pressure to catch up.",
@@ -71,7 +71,7 @@ export default function ForWhom() {
                 <ul className="space-y-2">
                   {card.pains.map((pain) => (
                     <li key={pain} className="flex items-start gap-3 text-[#6B7BA8] text-sm">
-                      <span className="text-sand mt-0.5 flex-shrink-0">—</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-sand/50 mt-1.5 flex-shrink-0" />
                       {pain}
                     </li>
                   ))}

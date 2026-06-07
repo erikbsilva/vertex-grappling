@@ -13,7 +13,7 @@ const steps = [
     number: '02',
     title: 'I message you on WhatsApp',
     description:
-      "Usually within 24 hours. We have a short conversation to figure out what makes sense for you.",
+      "Usually within 24 hours. We talk about your background and whether you would rather train one-on-one or bring a couple of people along.",
   },
   {
     number: '03',
@@ -66,7 +66,7 @@ export default function HowItWorks() {
           <div className="mt-12 text-center">
             <button
               onClick={scrollToForm}
-              className="inline-flex items-center gap-3 border border-sand text-sand font-semibold text-sm px-7 py-3.5 hover:bg-sand hover:text-dark transition-colors duration-200 tracking-wide"
+              className="inline-flex items-center gap-3 border border-sand text-sand font-semibold text-sm px-7 py-3.5 hover:bg-sand hover:text-dark transition-colors duration-200 tracking-wide cursor-pointer"
             >
               Get started
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">

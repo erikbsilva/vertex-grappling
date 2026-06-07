@@ -68,7 +68,7 @@ export default function Hero() {
           }}
         >
           Learn grappling on your own terms.{' '}
-          <span className="text-sand">Private lessons.</span> No group class.
+          <span className="text-sand">Train solo, or with people you trust.</span> Never more than four in the room.
         </h1>
 
         {/* Subheadline */}
@@ -80,9 +80,9 @@ export default function Hero() {
             transition: 'opacity 0.8s ease 600ms, transform 0.8s ease 600ms',
           }}
         >
-          One-on-one coaching in Boca Raton for adults who want to start
-          or get back into grappling. No class to keep up with. No one
-          watching you figure things out.
+          Private and small-group coaching in Boca Raton for adults who
+          want to start or get back into grappling, on your terms. No
+          class to keep up with. No one watching you figure things out.
         </p>
 
         {/* CTA */}
@@ -95,9 +95,9 @@ export default function Hero() {
         >
           <button
             onClick={scrollToForm}
-            className="inline-flex items-center gap-3 bg-sand text-dark font-semibold text-base px-8 py-4 rounded-none hover:bg-sand-light transition-colors duration-200 tracking-wide"
+            className="inline-flex items-center gap-3 bg-sand text-dark font-semibold text-base px-8 py-4 rounded-none hover:bg-sand-light transition-colors duration-200 tracking-wide cursor-pointer"
           >
-            I want to know more
+            Schedule my first session
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path
                 d="M3 8H13M13 8L9 4M13 8L9 12"
@@ -118,7 +118,7 @@ export default function Hero() {
             transition: 'opacity 0.8s ease 1000ms',
           }}
         >
-          UFC coaching credits. Now taking private students in Boca Raton.
+          UFC coaching credits. Limited to 8 students at a time, currently accepting applications.
         </p>
       </div>
 

@@ -56,9 +56,12 @@ export default function LeadForm() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-snug">
               Interested? Let's talk.
             </h2>
-            <p className="text-[#6B7BA8] leading-relaxed">
+            <p className="text-[#6B7BA8] leading-relaxed mb-3">
               Fill out the form and I will get back to you on WhatsApp within 24 hours.
               No commitment on your end yet.
+            </p>
+            <p className="text-sand text-xs font-medium tracking-wide uppercase">
+              I work with a maximum of 8 students at a time.
             </p>
           </div>
         </Reveal>
@@ -158,7 +161,7 @@ export default function LeadForm() {
                   {(['yes', 'no'] as const).map((val) => (
                     <label
                       key={val}
-                      className={`flex items-center justify-center gap-2 border py-3 cursor-pointer text-sm font-medium transition-colors ${
+                      className={`flex items-center justify-center gap-2 border py-3 cursor-pointer select-none text-sm font-medium transition-colors ${
                         form.ja_treinou === val
                           ? 'border-sand bg-sand/10 text-sand'
                           : 'border-dark-400 text-[#6B7BA8] hover:border-dark-300'
@@ -187,7 +190,7 @@ export default function LeadForm() {
                 disabled={state === 'loading' || !form.ja_treinou}
                 className="w-full bg-sand text-dark font-semibold text-sm py-4 hover:bg-sand-light disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 tracking-wide"
               >
-                {state === 'loading' ? 'Sending...' : 'Book my private lesson →'}
+                {state === 'loading' ? 'Sending...' : 'Book my first session →'}
               </button>
 
               <p className="text-[#3D4F7A] text-xs text-center">

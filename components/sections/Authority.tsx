@@ -2,12 +2,12 @@ import Image from 'next/image'
 import Reveal from '@/components/ui/Reveal'
 
 const credentials = [
-  'Black belt in grappling / Brazilian Luta-livre',
-  'Grappling coach — Vicente Luque (UFC)',
-  'Grappling coach — Viviane Araújo (UFC)',
-  'Author — "Beyond Technique"',
-  'NPF Sports Grappling Coach of the Year',
   'Based in Boca Raton, FL',
+  'Black belt in grappling / Brazilian Luta-livre',
+  'Author of "Beyond Technique"',
+  'NPF Sports Grappling Coach of the Year',
+  'Also coaches Vicente Luque (UFC)',
+  'Also coaches Viviane Araújo (UFC)',
 ]
 
 export default function Authority() {

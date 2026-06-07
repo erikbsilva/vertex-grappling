@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { useInView } from '@/hooks/useInView'
 
 type Props = {
@@ -19,12 +20,30 @@ export default function Reveal({
 }: Props) {
   const { ref, inView } = useInView()
   const Tag = (as ?? 'div') as React.ElementType
+  const [reducedMotion, setReducedMotion] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setReducedMotion(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   const translate = {
     up: 'translateY(28px)',
     left: 'translateX(-24px)',
     right: 'translateX(24px)',
     none: 'none',
+  }
+
+  // If user prefers reduced motion: render immediately, no transform
+  if (reducedMotion) {
+    return (
+      <Tag ref={ref as any} className={className}>
+        {children}
+      </Tag>
+    )
   }
 
   return (

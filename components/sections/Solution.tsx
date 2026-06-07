@@ -3,7 +3,7 @@ import Reveal from '@/components/ui/Reveal'
 const benefits = [
   {
     icon: '◈',
-    title: 'Thinking under pressure',
+    title: 'Staying calm when things get uncomfortable',
     description:
       'Grappling puts you in uncomfortable situations on purpose. Over time, your brain learns to stay calm and work through them. That carries over.',
   },
@@ -15,13 +15,13 @@ const benefits = [
   },
   {
     icon: '◈',
-    title: 'Coordination and body control',
+    title: 'Finally moving like you know your own body',
     description:
       'Most adults were never taught how to move well. We fix that. Slowly, deliberately, without making you feel stupid about it.',
   },
   {
     icon: '◈',
-    title: 'Strength and conditioning',
+    title: 'Getting stronger without trying to',
     description:
       'You will get physically stronger. Not because we add workouts, but because grappling demands it and your body adapts.',
   },

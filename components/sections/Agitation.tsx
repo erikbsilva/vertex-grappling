@@ -33,7 +33,9 @@ export default function Agitation() {
           <Reveal delay={250}>
             <p className="text-white font-medium">
               The issue is not your fitness level or your schedule.
-              It is the group class format. Private coaching removes that entirely.
+              It is walking into a room full of strangers with no say in
+              who is there or how much attention you get. Here, you decide
+              both.
             </p>
           </Reveal>
         </div>
