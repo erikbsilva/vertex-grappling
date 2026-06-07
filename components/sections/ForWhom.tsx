@@ -49,7 +49,7 @@ export default function ForWhom() {
         <Reveal className="relative w-full h-56 md:h-72 overflow-hidden mb-8 border border-dark-400">
           <Image
             src="/img/for-whom.webp"
-            alt="Private grappling lesson"
+            alt="Erik Silva coaching two grapplers through a position on the mat"
             fill
             className="object-cover object-center"
           />
