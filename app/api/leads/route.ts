@@ -64,6 +64,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true }, { status: 200 })
   } catch (err) {
     console.error('Unexpected error:', err)
-    return NextResponse.json({ error: 'Server error. Please try again.' }, { status: 500 })
+    const debugMsg = err instanceof Error ? `${err.name}: ${err.message}` : String(err)
+    return NextResponse.json({ error: 'Server error. Please try again.', debug: debugMsg }, { status: 500 })
   }
 }
