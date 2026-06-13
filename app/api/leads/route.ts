@@ -1,8 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { Resend } from 'resend'
 import { getSupabase } from '@/lib/supabase'
 
 const COACH_WHATSAPP = process.env.COACH_WHATSAPP_NUMBER! // e.g. "15615527276"
 const CALLMEBOT_APIKEY = process.env.CALLMEBOT_APIKEY!
+
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Vertex Grappling <onboarding@resend.dev>'
+
+async function sendConfirmationEmail(lead: { nome: string; email: string }) {
+  const firstName = lead.nome.trim().split(' ')[0]
+
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
+    await resend.emails.send({
+      from: FROM_EMAIL,
+      to: lead.email,
+      subject: "Thanks for reaching out — let's talk soon",
+      html: `
+        <div style="font-family: -apple-system, sans-serif; max-width: 480px; margin: 0 auto; color: #1a1a1a;">
+          <p>Hi ${firstName},</p>
+          <p>Thanks for reaching out to Vertex! I got your info and will message you on WhatsApp within 24 hours to chat about training.</p>
+          <p>No pressure, no sales pitch — just a quick conversation to see if it's a good fit for you.</p>
+          <p>Talk soon,<br/>Erik</p>
+        </div>
+      `,
+    })
+  } catch (err) {
+    console.error('Confirmation email failed — lead was still saved:', err)
+  }
+}
 
 async function sendWhatsAppNotification(lead: {
   nome: string
@@ -60,6 +86,9 @@ export async function POST(req: NextRequest) {
       email: email.trim(),
       ja_treinou: trainedBool,
     })
+
+    // Send confirmation email to the lead
+    await sendConfirmationEmail({ nome: nome.trim(), email: email.trim() })
 
     return NextResponse.json({ success: true }, { status: 200 })
   } catch (err) {
