@@ -6,6 +6,7 @@ const NAV_ITEMS = [
   { href: '/admin/classes', label: 'Aulas', enabled: true },
   { href: '/admin/feedback', label: 'Feedback', enabled: true },
   { href: '/admin/payments', label: 'Pagamentos', enabled: true },
+  { href: '/admin/ranking', label: 'Ranking', enabled: true },
 ]
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {

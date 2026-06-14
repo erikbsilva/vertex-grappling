@@ -6,7 +6,7 @@ the same Supabase project.
 
 **Stack:** Next.js 14 (App Router) · TypeScript · Tailwind CSS · Supabase (Postgres, Auth)
 
-## What's included (foundation + Módulos 1-5)
+## What's included (foundation + Módulos 1-6)
 
 - Database schema for the full MVP data model: `students`, `classes`,
   `attendance`, `feedback`, `graduations`, `payments`, `xp_transactions`,
@@ -27,18 +27,20 @@ the same Supabase project.
   - **Pagamentos** (Módulo 5): registrar cobranças (valor/vencimento) por
     aluno e marcar como pago. Cobranças pendentes com vencimento passado
     aparecem como "Atrasado".
+  - **Ranking** (Módulo 6): classificação de todos os alunos ativos por XP
+    total.
 - Student PWA (`/app`):
   - Login, escolha de idioma no primeiro acesso.
   - Dashboard com XP total, streak e a aula do dia, com check-in
     gamificado (Módulo 2/6: cada check-in dá XP e atualiza o streak).
-  - **Jornada**: mapa de faixas/graus com o progresso atual e histórico de
+  - **Jornada**: mapa de faixas/graus com o progresso atual, conquistas
+    (badges calculados a partir de XP/streak/graduações) e histórico de
     graduações.
+  - **Ranking** (Módulo 6): classificação por XP total, com destaque para a
+    posição do próprio aluno.
   - **Feedback**, mostrando o resumo do coach (traduzido para o idioma do
     aluno quando disponível) e permitindo marcar como visto.
   - **Pagamentos**: lista de cobranças com status (Pago/Pendente/Atrasado).
-
-O restante da gamificação (badges, ranking) tem o schema pronto, mas as
-telas ainda não foram construídas — é o próximo módulo.
 
 ### Tradução automática de feedback (Módulo 3)
 

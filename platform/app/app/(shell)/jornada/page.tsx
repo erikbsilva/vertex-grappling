@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
-import { FAIXAS, type BeltLevel, type Graduation } from '@/lib/types'
+import { computeBadges } from '@/lib/badges'
+import { FAIXAS, type BeltLevel, type Graduation, type StudentStats } from '@/lib/types'
 
 const GRAUS = [0, 1, 2, 3, 4]
 
@@ -23,6 +24,14 @@ export default async function JornadaPage() {
     .select('*')
     .eq('student_id', student!.id)
     .order('data', { ascending: false }) as { data: Graduation[] | null }
+
+  const { data: stats } = await supabase
+    .from('student_stats')
+    .select('*')
+    .eq('student_id', student!.id)
+    .maybeSingle() as { data: StudentStats | null }
+
+  const badges = computeBadges(stats, graduations?.length ?? 0)
 
   const currentOrdem =
     beltLevels?.find((b) => b.faixa === student?.faixa && b.grau === student?.grau)?.ordem ?? -1
@@ -54,6 +63,22 @@ export default async function JornadaPage() {
                 )
               })}
             </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="mt-8 font-display text-lg font-bold">Conquistas</h2>
+      <div className="mt-4 grid grid-cols-2 gap-3">
+        {badges.map((badge) => (
+          <div
+            key={badge.id}
+            className={`card ${badge.achieved ? 'border-gold/50' : 'opacity-50'}`}
+          >
+            <p className="font-display text-sm font-bold">{badge.label}</p>
+            <p className="mt-1 text-xs text-gray-400">{badge.description}</p>
+            <span className={`badge mt-2 ${badge.achieved ? 'badge-success' : 'badge-muted'}`}>
+              {badge.achieved ? 'Conquistado' : 'Bloqueado'}
+            </span>
           </div>
         ))}
       </div>
