@@ -74,6 +74,32 @@ export interface Graduation {
   created_at: string
 }
 
+export type PaymentStatus = 'pago' | 'pendente' | 'atrasado'
+
+export interface Payment {
+  id: string
+  student_id: string
+  valor: number
+  vencimento: string
+  status: PaymentStatus
+  pago_em: string | null
+  created_at: string
+}
+
+// `status` is only ever stored as 'pago' or 'pendente' — 'atrasado' is
+// derived here for display when a 'pendente' payment is past due.
+export function paymentDisplayStatus(payment: Pick<Payment, 'status' | 'vencimento'>): PaymentStatus {
+  if (payment.status === 'pago') return 'pago'
+  const today = new Date().toISOString().slice(0, 10)
+  return payment.vencimento < today ? 'atrasado' : 'pendente'
+}
+
+export const PAYMENT_STATUS_LABELS: Record<PaymentStatus, string> = {
+  pago: 'Pago',
+  pendente: 'Pendente',
+  atrasado: 'Atrasado',
+}
+
 export interface Feedback {
   id: string
   student_id: string

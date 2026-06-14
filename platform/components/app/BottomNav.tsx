@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { href: '/app', label: 'Início' },
   { href: '/app/jornada', label: 'Jornada' },
   { href: '/app/feedback', label: 'Feedback' },
+  { href: '/app/pagamentos', label: 'Pagamentos' },
 ]
 
 export function BottomNav() {
