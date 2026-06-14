@@ -117,3 +117,14 @@ variables in Vercel project settings.
   account won't auto-link; re-invite manually if needed.
 - PWA icon is a placeholder SVG — replace with branded icons (incl. PNG for
   iOS) before shipping to students.
+- Pending manual step: apply the following RLS policy in the Supabase SQL
+  Editor (already present in `supabase/schema.sql`, but not yet applied to
+  the live project) so students can see today's and upcoming classes:
+
+  ```sql
+  create policy "Students can view today's and upcoming classes" on classes
+    for select using (data >= current_date);
+  ```
+- Módulo 7 (Automação de mensagens) from the PRD is not part of this MVP and
+  is deferred to a future iteration.
+
