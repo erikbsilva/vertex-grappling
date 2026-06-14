@@ -24,6 +24,34 @@ export interface BeltLevel {
   ordem: number
 }
 
+export interface ClassSession {
+  id: string
+  data: string
+  horario: string | null
+  local: string
+  notas: string | null
+  created_at: string
+}
+
+export interface Attendance {
+  id: string
+  class_id: string
+  student_id: string
+  presente: boolean
+  checkin_at: string | null
+  xp_awarded: number
+  created_at: string
+}
+
+export interface StudentStats {
+  student_id: string
+  xp_total: number
+  streak_atual: number
+  streak_recorde: number
+  faltas_consecutivas: number
+  updated_at: string
+}
+
 export const FAIXAS = ['Branca', 'Azul', 'Roxa', 'Marrom', 'Preta'] as const
 
 export const IDIOMAS = [

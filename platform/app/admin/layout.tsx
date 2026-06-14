@@ -3,7 +3,7 @@ import { SignOutButton } from '@/components/SignOutButton'
 
 const NAV_ITEMS = [
   { href: '/admin/students', label: 'Alunos', enabled: true },
-  { href: '/admin/classes', label: 'Aulas', enabled: false },
+  { href: '/admin/classes', label: 'Aulas', enabled: true },
   { href: '/admin/feedback', label: 'Feedback', enabled: false },
   { href: '/admin/payments', label: 'Pagamentos', enabled: false },
 ]

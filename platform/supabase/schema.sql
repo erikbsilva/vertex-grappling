@@ -201,6 +201,11 @@ create policy "Students can view classes they attended" on classes
     )
   );
 
+-- Students also need to see today's/upcoming classes before they have an
+-- attendance row, so the app can show a "check in" card on the dashboard.
+create policy "Students can view today's and upcoming classes" on classes
+  for select using (data >= current_date);
+
 create policy "Students can view own attendance" on attendance
   for select using (student_id = current_student_id());
 
