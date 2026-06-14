@@ -3,6 +3,31 @@ import type { createAdminClient } from '@/lib/supabase/admin'
 type AdminClient = ReturnType<typeof createAdminClient>
 
 const XP_CHECKIN = 10
+const XP_GRADUATION = 50
+
+// Awards XP for a graduation (new faixa/grau) milestone.
+export async function awardGraduationXp(supabase: AdminClient, studentId: string, graduationId: string) {
+  await supabase.from('xp_transactions').insert({
+    student_id: studentId,
+    tipo: 'meta',
+    xp: XP_GRADUATION,
+    referencia_id: graduationId,
+  })
+
+  const { data: stats } = await supabase
+    .from('student_stats')
+    .select('xp_total')
+    .eq('student_id', studentId)
+    .maybeSingle()
+
+  await supabase.from('student_stats').upsert({
+    student_id: studentId,
+    xp_total: (stats?.xp_total ?? 0) + XP_GRADUATION,
+    updated_at: new Date().toISOString(),
+  })
+
+  return XP_GRADUATION
+}
 
 // Marks attendance for a (class, student) pair and, the first time a row is
 // created for that pair, applies the XP/streak side effects. Later toggles

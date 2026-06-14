@@ -3,6 +3,7 @@
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { awardGraduationXp } from '@/lib/gamification'
 import { FAIXAS, type StudentStatus } from '@/lib/types'
 
 export type ActionState = { error?: string; success?: boolean } | null
@@ -83,6 +84,33 @@ export async function setStudentStatus(id: string, status: StudentStatus) {
 
   revalidatePath('/admin/students')
   revalidatePath(`/admin/students/${id}`)
+}
+
+export async function addGraduation(studentId: string, _prevState: ActionState, formData: FormData): Promise<ActionState> {
+  const faixa = formData.get('faixa') as string
+  const grau = Number(formData.get('grau'))
+  const data = formData.get('data') as string
+
+  if (!FAIXAS.includes(faixa as (typeof FAIXAS)[number])) return { error: 'Faixa inválida.' }
+  if (!Number.isInteger(grau) || grau < 0 || grau > 4) return { error: 'Grau inválido.' }
+  if (!data) return { error: 'Data é obrigatória.' }
+
+  const supabase = createAdminClient()
+
+  const { data: graduation, error } = await supabase
+    .from('graduations')
+    .insert({ student_id: studentId, faixa, grau, data })
+    .select('id')
+    .single()
+
+  if (error) return { error: error.message }
+
+  await supabase.from('students').update({ faixa, grau }).eq('id', studentId)
+  await awardGraduationXp(supabase, studentId, graduation.id)
+
+  revalidatePath(`/admin/students/${studentId}`)
+  revalidatePath('/admin/students')
+  return { success: true }
 }
 
 export async function resendInvite(email: string) {

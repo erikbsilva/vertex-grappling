@@ -102,11 +102,10 @@ export default async function StudentDashboardPage() {
           </p>
         </Link>
       ) : (
-        <div className="card mt-6 w-full max-w-sm">
-          <p className="text-sm text-gray-400">
-            Seu mapa da jornada vai aparecer aqui em breve.
-          </p>
-        </div>
+        <Link href="/app/jornada" className="card mt-6 w-full max-w-sm hover:border-gold">
+          <p className="text-sm text-gray-400">Sua jornada</p>
+          <p className="mt-1 font-display text-lg font-bold">Ver mapa de faixas e graduações</p>
+        </Link>
       )}
     </div>
   )

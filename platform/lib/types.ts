@@ -65,6 +65,15 @@ export const IDIOMA_LABELS: Record<string, string> = IDIOMAS.reduce(
   {} as Record<string, string>
 )
 
+export interface Graduation {
+  id: string
+  student_id: string
+  faixa: string
+  grau: number
+  data: string
+  created_at: string
+}
+
 export interface Feedback {
   id: string
   student_id: string
