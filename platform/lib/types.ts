@@ -59,3 +59,21 @@ export const IDIOMAS = [
   { value: 'en', label: 'English' },
   { value: 'es', label: 'Español' },
 ] as const
+
+export const IDIOMA_LABELS: Record<string, string> = IDIOMAS.reduce(
+  (acc, { value, label }) => ({ ...acc, [value]: label }),
+  {} as Record<string, string>
+)
+
+export interface Feedback {
+  id: string
+  student_id: string
+  class_id: string | null
+  audio_url: string | null
+  transcript: string | null
+  summary_original: string | null
+  summary_translated: string | null
+  idioma_traducao: string | null
+  visto_em: string | null
+  created_at: string
+}

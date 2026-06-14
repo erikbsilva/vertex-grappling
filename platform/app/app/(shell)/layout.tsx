@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { SignOutButton } from '@/components/SignOutButton'
+import { BottomNav } from '@/components/app/BottomNav'
 
 export default async function StudentShellLayout({ children }: { children: React.ReactNode }) {
   const supabase = createClient()
@@ -39,7 +40,8 @@ export default async function StudentShellLayout({ children }: { children: React
         </span>
         <SignOutButton redirectTo="/app/login" />
       </header>
-      <main className="px-6 py-8">{children}</main>
+      <main className="px-6 py-8 pb-20">{children}</main>
+      <BottomNav />
     </div>
   )
 }

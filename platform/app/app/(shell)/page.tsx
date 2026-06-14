@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { CheckInButton } from '@/components/app/CheckInButton'
@@ -36,6 +37,12 @@ export default async function StudentDashboardPage() {
     .select('*')
     .eq('student_id', student.id)
     .maybeSingle() as { data: StudentStats | null }
+
+  const { data: unseenFeedback } = await supabase
+    .from('feedback')
+    .select('id')
+    .eq('student_id', student.id)
+    .is('visto_em', null)
 
   return (
     <div className="flex flex-col items-center text-center">
@@ -87,11 +94,20 @@ export default async function StudentDashboardPage() {
         })
       )}
 
-      <div className="card mt-6 w-full max-w-sm">
-        <p className="text-sm text-gray-400">
-          Seu mapa da jornada e feedback do coach vão aparecer aqui em breve.
-        </p>
-      </div>
+      {unseenFeedback?.length ? (
+        <Link href="/app/feedback" className="card mt-6 w-full max-w-sm hover:border-gold">
+          <p className="text-sm text-gray-400">Novo feedback do coach</p>
+          <p className="mt-1 font-display text-lg font-bold text-gold">
+            {unseenFeedback.length} {unseenFeedback.length === 1 ? 'mensagem' : 'mensagens'} para ver
+          </p>
+        </Link>
+      ) : (
+        <div className="card mt-6 w-full max-w-sm">
+          <p className="text-sm text-gray-400">
+            Seu mapa da jornada vai aparecer aqui em breve.
+          </p>
+        </div>
+      )}
     </div>
   )
 }

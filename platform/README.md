@@ -6,7 +6,7 @@ the same Supabase project.
 
 **Stack:** Next.js 14 (App Router) · TypeScript · Tailwind CSS · Supabase (Postgres, Auth)
 
-## What's included (foundation + Módulo 1)
+## What's included (foundation + Módulos 1-3)
 
 - Database schema for the full MVP data model: `students`, `classes`,
   `attendance`, `feedback`, `graduations`, `payments`, `xp_transactions`,
@@ -15,13 +15,30 @@ the same Supabase project.
   - Coach (admin): email/password login, gated by `ADMIN_EMAIL`.
   - Student: magic link or Google sign-in, no password. Linked to their
     `students` row automatically by e-mail on first login.
-- Admin (`/admin`): cadastrar, editar e arquivar alunos (Módulo 1), com envio
-  automático de convite por e-mail.
-- Student PWA shell (`/app`): login, escolha de idioma no primeiro acesso,
-  e um placeholder para o dashboard/jornada.
+- Admin (`/admin`):
+  - **Alunos** (Módulo 1): cadastrar, editar e arquivar alunos, com envio
+    automático de convite por e-mail.
+  - **Aulas** (Módulo 2): registrar aulas (data/horário/local/notas) e marcar
+    presença por aluno.
+  - **Feedback** (Módulo 3): enviar feedback de texto (e opcionalmente um
+    link de áudio) para um aluno, vinculado ou não a uma aula.
+- Student PWA (`/app`):
+  - Login, escolha de idioma no primeiro acesso.
+  - Dashboard com XP total, streak e a aula do dia, com check-in
+    gamificado (Módulo 2/6: cada check-in dá XP e atualiza o streak).
+  - Página de **Feedback**, mostrando o resumo do coach (traduzido para o
+    idioma do aluno quando disponível) e permitindo marcar como visto.
 
-Aulas, feedback por IA, graduação, pagamentos e gamificação têm o schema
-pronto, mas as telas ainda não foram construídas — são os próximos módulos.
+Graduação, pagamentos e o restante da gamificação (badges, ranking) têm o
+schema pronto, mas as telas ainda não foram construídas — são os próximos
+módulos.
+
+### Tradução automática de feedback (Módulo 3)
+
+Se `OPENAI_API_KEY` estiver configurada, o feedback de texto enviado pelo
+coach é automaticamente traduzido para o idioma escolhido pelo aluno (caso
+seja diferente de português) usando a API da OpenAI. Sem a chave, o aluno
+simplesmente vê o texto original em português.
 
 ## Setup
 

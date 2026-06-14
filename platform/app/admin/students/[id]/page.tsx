@@ -4,14 +4,8 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import { StudentForm } from '@/components/admin/StudentForm'
 import { StudentActions } from '@/components/admin/StudentActions'
 import { updateStudent } from '../actions'
-import type { Student } from '@/lib/types'
+import { IDIOMA_LABELS, type Student } from '@/lib/types'
 import type { ActionState } from '../actions'
-
-const IDIOMA_LABELS: Record<string, string> = {
-  pt: 'Português',
-  en: 'English',
-  es: 'Español',
-}
 
 export default async function StudentDetailPage({ params }: { params: { id: string } }) {
   const supabase = createAdminClient()
