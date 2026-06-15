@@ -1,0 +1,17 @@
+{
+  "name": "Vertex BJJ",
+  "short_name": "Vertex BJJ",
+  "description": "Acompanhamento de evolução para alunos Vertex BJJ",
+  "start_url": "/app",
+  "display": "standalone",
+  "background_color": "#07091A",
+  "theme_color": "#07091A",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
