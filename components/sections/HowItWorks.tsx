@@ -1,5 +1,3 @@
-'use client'
-
 import Reveal from '@/components/ui/Reveal'
 
 const steps = [
@@ -24,10 +22,6 @@ const steps = [
 ]
 
 export default function HowItWorks() {
-  const scrollToForm = () => {
-    document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <section className="bg-dark py-20 md:py-28">
       <div className="max-w-5xl mx-auto px-6">
@@ -64,8 +58,8 @@ export default function HowItWorks() {
 
         <Reveal delay={200}>
           <div className="mt-12 text-center">
-            <button
-              onClick={scrollToForm}
+            <a
+              href="#lead-form"
               className="inline-flex items-center gap-3 border border-sand text-sand font-semibold text-sm px-7 py-3.5 hover:bg-sand hover:text-dark transition-colors duration-200 tracking-wide cursor-pointer"
             >
               Get started
@@ -78,7 +72,7 @@ export default function HowItWorks() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </a>
           </div>
         </Reveal>
       </div>
